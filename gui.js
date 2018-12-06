@@ -1,4 +1,10 @@
 function drawStuff(){
+  //Write html here
+  document.write(`
+  <canvas id="barGraph">
+  </canvas>
+  `);
+  
   //get canvases & contexts
   var c1 = document.getElementById("barGraph");
   var ctx1 = c1.getContext("2d");

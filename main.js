@@ -24,7 +24,7 @@ for(var i = 0; i < numTrials; i++){
 }
 
 //Change undefineds to 0s
-for(int i = 0; i < distributionOfMoves.length; i++){
+for(var i = 0; i < distributionOfMoves.length; i++){
   if(distributionOfMoves[i] == undefined){
     distributionOfMoves[i] = 0;
   }
