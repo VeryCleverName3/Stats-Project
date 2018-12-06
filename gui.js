@@ -1,9 +1,9 @@
 function drawStuff(){
   //Write html here
-  document.write("
+  document.write(`
   <canvas id="barGraph">
   </canvas>
-  ");
+  `);
   
   //get canvases & contexts
   var c1 = document.getElementById("barGraph");
