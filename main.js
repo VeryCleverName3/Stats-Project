@@ -29,3 +29,6 @@ for(int i = 0; i < distributionOfMoves.length; i++){
     distributionOfMoves[i] = 0;
   }
 }
+
+//draw stuff
+drawStuff();
