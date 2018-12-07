@@ -25,7 +25,7 @@ function barGraph(c1, ctx1, margins){
 }
 
 function boxPlot(c, ctx){
-  var x = c.width - 2;
+  var x = c.width - 10;
   var y = c.height;
   ctx.font = "10px arial";
   ctx.textAlign = "center";
@@ -86,7 +86,7 @@ function drawStuff(){
   var c2 = document.getElementById("boxPlot");
   var ctx2 = c2.getContext("2d");
   c2.width = window.innerWidth / 3;
-  c2.height = c2.width * (3/4);
+  c2.height = c2.width * (1/4);
 
   //Make bar graph- you can tell I'm a good programmer because I only use global variables. (Arguments are for the weak)
   //nvm have to pass the context and canvas and margins :(
