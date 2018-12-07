@@ -78,19 +78,19 @@ function Q3(valueArray)
 	}
 	return q3;
 }
-
+//Return the minimum outlier range
 function outlierMin(valueArray)
 {
 	IQR = 1.5 * (Q3(valueArray) - Q1(valueArray));
 	return Q1(valueArray) - IQR;
 }
-
+//Return maximum outlier range
 function outlierMax(valueArray)
 {
 	IQR = 1.5 * (Q3(valueArray) - Q1(valueArray));
 	return Q3(valueArray) + IQR;
 }
-
+//Calculate a list of outliers and return it
 function allOutliers(valueArray)
 {
 	min = outlierMin(valueArray);
@@ -100,7 +100,7 @@ function allOutliers(valueArray)
 	{
 		if ((i + 2) < min || (i+2) > max)
 		{
-			outliers[outliers.length] = i;
+			outliers[outliers.length] = i + 2;
 		}
 	}
 	return outliers;
