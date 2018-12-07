@@ -78,3 +78,15 @@ function Q3(valueArray)
 	}
 	return q3;
 }
+
+function outlierMin(valueArray)
+{
+	IQR = 1.5 * (Q3(valueArray) - Q1(valueArray));
+	return Q1(valueArray) - IQR;
+}
+
+function outlierMax(valueArray)
+{
+	IQR = 1.5 * (Q3(valueArray) - Q1(valueArray));
+	return Q3(valueArray) + IQR;
+}

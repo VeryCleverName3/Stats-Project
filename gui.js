@@ -1,3 +1,5 @@
+//Gui functions. We don't talk about this file.
+
 function barGraph(c1, ctx1, margins){
   var biggestNum = 0;
   for(var i = 0; i < distributionOfMoves.length; i++){
