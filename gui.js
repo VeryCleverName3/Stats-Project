@@ -23,14 +23,36 @@ function barGraph(c1, ctx1, margins){
 }
 
 function boxPlot(c, ctx){
-  var x = c.width;
+  var x = c.width - 2;
   var y = c.height;
+  ctx.font = "10px arial";
+  ctx.textAlign = "center";
+  ctx.lineWidth = "10px";
   ctx.fillStyle = color;
-  ctx.strokeRect(minimum(distributionOfMoves), y - 20 / 2, 1, y - 20 / 2);
-  ctx.strokeRect(Q1(distributionOfMoves), y - 20 / 2, 1, y - 20 / 2);
-  ctx.strokeRect(Q2(distributionOfMoves), y - 20 / 2, 1, y - 20 / 2);
-  ctx.strokeRect(Q3(distributionOfMoves), y - 20 / 2, 1, y - 20 / 2);
-  ctx.strokeRect(maximum(distributionOfMoves), y - 20 / 2, 1, y - 20 / 2);
+  ctx.strokeRect(minimum(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.fillStyle = "black";
+  ctx.fillText(minimum(distributionOfMoves), minimum(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillStyle = color;
+  ctx.strokeRect(Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.fillStyle = "black";
+  ctx.fillText(Q1(distributionOfMoves), Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillStyle = color;
+  ctx.strokeRect(Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.fillStyle = "black";
+  ctx.fillText(Q3(distributionOfMoves), Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillStyle = color;
+  ctx.strokeRect(maximum(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.fillStyle = "black";
+  ctx.fillText(maximum(distributionOfMoves), maximum(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillStyle = color;
+  ctx.fillRect(Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, (Q3(distributionOfMoves) - Q1(distributionOfMoves)) / maximum(distributionOfMoves) * x, y - 20);
+  ctx.strokeRect(Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, (Q3(distributionOfMoves) - Q1(distributionOfMoves)) / maximum(distributionOfMoves) * x, y - 20);
+  ctx.strokeRect(minimum(distributionOfMoves) / maximum(distributionOfMoves) * x, (y - 20) / 2, ((Q1(distributionOfMoves) - minimum(distributionOfMoves)) / maximum(distributionOfMoves)) * x, 1);
+  ctx.strokeRect(Q2(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.fillStyle = "black";
+  ctx.fillText(Q2(distributionOfMoves), Q2(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillStyle = color;
+  ctx.strokeRect(Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, (y - 20) / 2, (maximum(distributionOfMoves) - Q3(distributionOfMoves)) / maximum(distributionOfMoves) * x, 1);
 }
 
 function drawStuff(){
