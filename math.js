@@ -90,3 +90,18 @@ function outlierMax(valueArray)
 	IQR = 1.5 * (Q3(valueArray) - Q1(valueArray));
 	return Q3(valueArray) + IQR;
 }
+
+function allOutliers(valueArray)
+{
+	min = outlierMin(valueArray);
+	max = outlierMax(valueArray);
+	outliers = []
+	for (var i = 0; i < valueArray.length; i++)
+	{
+		if ((i + 2) < min || (i+2) > max)
+		{
+			outliers[outliers.length] = i;
+		}
+	}
+	return outliers;
+}
