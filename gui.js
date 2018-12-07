@@ -53,6 +53,9 @@ function boxPlot(c, ctx){
   ctx.fillText(Q2(distributionOfMoves), Q2(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
   ctx.fillStyle = color;
   ctx.strokeRect(Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, (y - 20) / 2, (maximum(distributionOfMoves) - Q3(distributionOfMoves)) / maximum(distributionOfMoves) * x, 1);
+  ctx.font = "20px arial";
+  ctx.fillStyle = "black";
+  ctx.fillText("Results of Simulation", x / 2, y - 5);
 }
 
 function drawStuff(){
@@ -87,7 +90,7 @@ function drawStuff(){
   //nvm have to pass the context and canvas and margins :(
   barGraph(c1, ctx1, margins);
 
-  //Make a box plot (using arguments)
+  //Make a box plot (using arguments) D:
   boxPlot(c2, ctx2);
 
 }
