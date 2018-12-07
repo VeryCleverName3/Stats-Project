@@ -9,6 +9,7 @@ var numTrials;
 while(isNaN(numTrials) || numTrials <= 0){
   numTrials = 1 * prompt("Please enter a number of trials: ", "500");
 }
+var color = prompt("What color do you want your graphs to be? If you enter an invalid color, they will just be black.", "pink");
 
 //Simulate trials
 for(var i = 0; i < numTrials; i++){
