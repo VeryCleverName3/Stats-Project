@@ -23,7 +23,7 @@ function barGraph(c1, ctx1, margins){
 }
 
 function boxPlot(c, ctx){
-  var x = c.width - 2;
+  var x = c.width - 10;
   var y = c.height;
   ctx.font = "10px arial";
   ctx.textAlign = "center";
