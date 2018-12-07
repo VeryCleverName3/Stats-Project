@@ -43,9 +43,9 @@ function boxPlot(c, ctx){
   ctx.fillStyle = "black";
   ctx.fillText(Q3(distributionOfMoves), Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
   ctx.fillStyle = color;
-  ctx.strokeRect(maximum(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
+  ctx.strokeRect(outlierMax(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, 1, y - 20);
   ctx.fillStyle = "black";
-  ctx.fillText(maximum(distributionOfMoves), maximum(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
+  ctx.fillText(outlierMax(distributionOfMoves), outlierMax(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
   ctx.fillStyle = color;
   ctx.fillRect(Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, (Q3(distributionOfMoves) - Q1(distributionOfMoves)) / maximum(distributionOfMoves) * x, y - 20);
   ctx.strokeRect(Q1(distributionOfMoves) / maximum(distributionOfMoves) * x, 0, (Q3(distributionOfMoves) - Q1(distributionOfMoves)) / maximum(distributionOfMoves) * x, y - 20);
@@ -55,9 +55,14 @@ function boxPlot(c, ctx){
   ctx.fillText(Q2(distributionOfMoves), Q2(distributionOfMoves) / maximum(distributionOfMoves) * x, y - 10);
   ctx.fillStyle = color;
   ctx.strokeRect(Q3(distributionOfMoves) / maximum(distributionOfMoves) * x, (y - 20) / 2, (maximum(distributionOfMoves) - Q3(distributionOfMoves)) / maximum(distributionOfMoves) * x, 1);
-  ctx.font = "20px arial";
+  ctx.font = "10px arial";
   ctx.fillStyle = "black";
-  ctx.fillText("Results of Simulation", x / 2, y - 5);
+  for(var i = 0; i < allOutliers(distributionOfMoves).length; i++){
+    ctx.fillRect(allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2, 1, 1);
+    ctx.fillText(allOutliers(distributionOfMoves)[i], allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2 + 10);
+  }
+  ctx.font = "20px arial";
+  ctx.fillText("Results of Simulation", x / 2, y + 5);
 }
 
 function drawStuff(){

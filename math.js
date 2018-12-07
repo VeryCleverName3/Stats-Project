@@ -100,7 +100,7 @@ function allOutliers(valueArray)
 	{
 		if ((i + 2) < min || (i+2) > max)
 		{
-			outliers[outliers.length] = i;
+			outliers[outliers.length] = i + 2;
 		}
 	}
 	return outliers;
