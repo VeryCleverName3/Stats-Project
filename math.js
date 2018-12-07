@@ -11,7 +11,7 @@ function maximum(valueArray)
 	return valueArray.length + 1;
 }
 function Q1(valueArray)
-{	
+{
 	//Get the sum of all values in the array. This is equal to the number of games played
 	var sum = 0;
 	for (var i = 0; i < valueArray.length; i++)
