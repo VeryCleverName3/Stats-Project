@@ -1,3 +1,8 @@
+if (!confirm("Click OK to run the simulation, click cancel to open the report"))
+{
+	window.location.href = "report.html";
+}
+
 //Create array for board position and number of moves
 var distributionOfMoves = [];
 
