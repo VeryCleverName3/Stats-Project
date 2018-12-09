@@ -26,7 +26,7 @@ function barGraph(c1, ctx1, margins){
 
 function boxPlot(c, ctx){
   var x = c.width - 10;
-  var y = c.height;
+  var y = c.height - 20;
   ctx.font = "10px arial";
   ctx.textAlign = "center";
   ctx.lineWidth = "10px";
@@ -58,14 +58,17 @@ function boxPlot(c, ctx){
   ctx.font = "10px arial";
   ctx.fillStyle = "black";
   for(var i = 0; i < allOutliers(distributionOfMoves).length; i++){
-    ctx.fillRect(allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2, 1, 1);
-    if(i % 2 == 0) {
-      ctx.fillText(allOutliers(distributionOfMoves)[i], allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2 + 10);
-    } else ctx.fillText(allOutliers(distributionOfMoves)[i], allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2 - 10);
-
+    for(var j = 0; j < 10; j++) ctx.fillRect(allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2, 1, 1);
+    //if(i % 2 == 0) {
+  //    ctx.fillText(allOutliers(distributionOfMoves)[i], allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2 + 10);
+  //  } else ctx.fillText(allOutliers(distributionOfMoves)[i], allOutliers(distributionOfMoves)[i] / maximum(distributionOfMoves) * x, (y - 20) / 2 - 10);
+  }
+  ctx.strokeRect(0, y - 7.5, c.width, 1);
+  for(var i = 2; i <= maximum(distributionOfMoves); i++){
+    if(i % 2 == 0)ctx.fillText(i, i / maximum(distributionOfMoves) * x, y + 2.5);
   }
   ctx.font = "15px arial";
-  ctx.fillText("Results of Simulation", x / 2, y);
+  ctx.fillText("Number of Moves", x / 2, y + 20);
 }
 
 function drawStuff(){
