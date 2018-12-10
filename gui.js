@@ -106,4 +106,6 @@ function drawStuff(){
   //Make a box plot (using arguments) D:
   boxPlot(c2, ctx2);
 
+  document.write("Raw Data: " + distributionOfMoves);
+
 }
