@@ -79,6 +79,8 @@ function drawStuff(){
       <!-- Summary about bar graph goes here (either above or below this comment)-->
       <canvas id="barGraph">
       </canvas>
+	  <img src="chessBoard.png">
+	  <img src="chutesLaddars.jpg">
     </div>
     <div class="flex">
       <canvas id="boxPlot">
